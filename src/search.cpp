@@ -208,6 +208,7 @@ Score Game::search(Score alpha, Score beta, Depth depth, const bool cutNode, SSt
 
         // Null move pruning
         if (eval >= ss->staticEval &&
+            ss->staticEval >= beta + 175 - 25 * depth &&
             eval >= beta &&
             (ss - 1)->move &&
             depth >= 3 &&
